@@ -1,6 +1,22 @@
+# Konfigurasi lokal (berisi password DB)
 config/database.php
+.env
+
+# Log dan unggahan (struktur folder tetap disimpan lewat .gitkeep)
 storage/log/*
 storage/unggahan/*
+!storage/log/.gitkeep
+!storage/unggahan/.gitkeep
+
+# Sistem operasi dan editor
+.DS_Store
+Thumbs.db
+desktop.ini
 .vscode/
 .idea/
-!.gitkeep
+*.swp
+
+# Lain-lain
+*.log
+vendor/
+node_modules/
