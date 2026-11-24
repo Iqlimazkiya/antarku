@@ -1,0 +1,6 @@
+config/database.php
+storage/log/*
+storage/unggahan/*
+.vscode/
+.idea/
+!.gitkeep
