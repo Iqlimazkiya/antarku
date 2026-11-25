@@ -7,10 +7,17 @@ class Database
     {
         if (self::$pdo === null) {
             $c = require __DIR__ . '/../config/database.php';
-            $dsn = "mysql:host={$c['host']};port={$c['port']};dbname={$c['dbname']};charset={$c['charset']}";
+            $host    = $c['host'] ?? 'localhost';
+            $port    = $c['port'] ?? 3306;
+            $dbname  = $c['dbname'] ?? $c['database'] ?? 'antarku';
+            $user    = $c['user'] ?? $c['username'] ?? 'root';
+            $pass    = $c['pass'] ?? $c['password'] ?? '';
+            $charset = $c['charset'] ?? 'utf8mb4';
+
+            $dsn = "mysql:host={$host};port={$port};dbname={$dbname};charset={$charset}";
 
             try {
-                self::$pdo = new PDO($dsn, $c['user'], $c['pass'], [
+                self::$pdo = new PDO($dsn, $user, $pass, [
                     PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
                     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
                 ]);

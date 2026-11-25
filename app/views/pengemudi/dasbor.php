@@ -56,9 +56,12 @@ $namaDepan = explode(' ', trim($pengemudi['nama']))[0];
       <span>Driver / Dashboard
         <span data-show="online">online</span><span data-show="offline">offline</span>
       </span>
-      <span class="badge-status">
-        <span data-show="online">Online</span><span data-show="offline">Offline</span>
-      </span>
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <span class="badge-status">
+          <span data-show="online">Online</span><span data-show="offline">Offline</span>
+        </span>
+        <a href="<?= $base ?>/logout" style="font-size: 13px; color: #dc2626; text-decoration: none; font-weight: 600; padding: 4px 8px; border-radius: 6px; background: #fee2e2;">Keluar</a>
+      </div>
     </header>
 
     <main class="content">

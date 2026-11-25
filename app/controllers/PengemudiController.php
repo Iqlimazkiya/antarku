@@ -25,6 +25,7 @@ class PengemudiController
         }
 
         $online = ($data['status_ketersediaan'] !== 'offline');
+        $namaDepan = explode(' ', trim($data['nama'] ?? 'Driver'))[0];
 
         $pengemudi = [
             'nama'      => $data['nama'],
